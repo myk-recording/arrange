@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/zhen"
+    android:orientation="vertical"
+    android:gravity="top">
+
+    <ImageView
+        android:src="@drawable/qingjia"
+        android:id="@+id/imageView3"
+        android:layout_margin="5px"
+        android:clickable="true"
+        android:layout_height="240dp"
+        android:layout_width="match_parent"/>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <TextView android:layout_width="90dp"
+            android:id="@+id/tvzhuti"
+            android:textSize="20sp"
+            android:textColor="#ED4A4B"
+            android:text="主  题："
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtzhuti"
+            android:layout_alignBottom="@+id/txtzhuti"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="8dp">
+        </TextView>
+
+        <EditText
+            android:id="@+id/txtzhuti"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tvzhuti"
+            android:maxLength="16"
+            android:textColor="#3C3F41"
+            />
+
+        <TextView android:layout_width="90dp"
+            android:id="@+id/tvtime"
+            android:textSize="20sp"
+            android:text="时  间："
+            android:textColor="#ED4A4B"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txttime"
+            android:layout_alignBottom="@+id/txttime"
+            android:layout_toLeftOf="@+id/txtzhuti">
+        </TextView>
+
+        <EditText
+            android:id="@+id/txttime"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tvtime"
+            android:layout_below="@id/txtzhuti"
+            android:inputType="datetime"
+            android:hint="2018-06-25"
+            android:textColor="#3C3F41"
+            />
+
+        <TextView android:layout_width="90dp"
+            android:id="@+id/tvdidian"
+            android:textSize="20sp"
+            android:text="地  点："
+            android:layout_height="wrap_content"
+            android:textColor="#ED4A4B"
+            android:layout_alignTop="@+id/txtdidian"
+            android:layout_toLeftOf="@+id/txttime">
+        </TextView>
+
+        <EditText
+            android:id="@+id/txtdidian"
+            android:layout_width="210dp"
+            android:layout_height="60dp"
+            android:layout_toRightOf="@id/tvdidian"
+            android:layout_below="@id/txttime"
+            android:textColor="#3C3F41"
+            android:singleLine="false"
+            android:gravity="top"
+            />
+
+        <TextView android:layout_width="90dp"
+            android:id="@+id/tvganchu"
+            android:textSize="20sp"
+            android:text="感  触："
+            android:textColor="#ED4A4B"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/txtganchu"
+            android:layout_toLeftOf="@+id/txtdidian">
+        </TextView>
+
+        <EditText
+            android:id="@+id/txtganchu"
+            android:layout_width="210dp"
+            android:layout_height="60dp"
+            android:textColor="#3C3F41"
+            android:singleLine="false"
+            android:layout_below="@id/txtdidian"
+            android:gravity="top"
+            android:layout_toRightOf="@+id/tvganchu"/>
+
+        <Button
+            android:id="@+id/btn_save"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btn_back"
+            android:layout_alignBottom="@+id/btn_back"
+            android:layout_toLeftOf="@+id/btn_back"
+            android:text="保存"
+            />
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@id/txtganchu"
+            android:layout_alignParentRight="true"
+            android:text="取消"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

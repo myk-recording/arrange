@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">忆食阁</string>
+    <string name="app_name2">加菜</string>
+    <string name="app_name3">回味</string>
+    <string name="app_name4">更改菜式</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

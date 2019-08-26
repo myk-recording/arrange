@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/zhen"
+    android:orientation="vertical"
+    android:gravity="top">
+
+    <ImageView
+        android:src="@drawable/qingjia"
+        android:id="@+id/imageView1"
+        android:layout_margin="5px"
+        android:clickable="true"
+        android:layout_height="240dp"
+        android:layout_width="match_parent"/>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <TextView android:layout_width="90dp"
+            android:id="@+id/tvInzhuti"
+            android:textSize="20sp"
+            android:text="主  题："
+            android:textColor="#ED4A4B"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtInzhuti"
+            android:layout_alignBottom="@+id/txtInzhuti"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="8dp">
+        </TextView>
+
+        <EditText
+            android:id="@+id/txtInzhuti"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tvInzhuti"
+            android:maxLength="16"
+            android:textColor="#3C3F41"
+            />
+
+        <TextView android:layout_width="90dp"
+            android:id="@+id/tvIntime"
+            android:textSize="20sp"
+            android:text="时  间："
+            android:layout_height="wrap_content"
+            android:textColor="#ED4A4B"
+            android:layout_alignBaseline="@+id/txtIntime"
+            android:layout_alignBottom="@+id/txtIntime"
+            android:layout_toLeftOf="@+id/txtInzhuti">
+        </TextView>
+
+        <EditText
+            android:id="@+id/txtIntime"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tvIntime"
+            android:layout_below="@id/txtInzhuti"
+            android:inputType="datetime"
+            android:hint="2018-06-25"
+            android:textColor="#3C3F41"
+            />
+
+        <TextView android:layout_width="90dp"
+            android:id="@+id/tvIndidian"
+            android:textSize="20sp"
+            android:text="地  点："
+            android:layout_height="wrap_content"
+            android:textColor="#ED4A4B"
+            android:layout_alignTop="@+id/txtIndidian"
+            android:layout_toLeftOf="@+id/txtIntime">
+        </TextView>
+
+        <EditText
+            android:id="@+id/txtIndidian"
+            android:layout_width="210dp"
+            android:layout_height="60dp"
+            android:layout_toRightOf="@id/tvIndidian"
+            android:layout_below="@id/txtIntime"
+            android:textColor="#3C3F41"
+            android:singleLine="false"
+            android:gravity="top"
+            />
+
+        <TextView android:layout_width="90dp"
+            android:id="@+id/tvInganchu"
+            android:textSize="20sp"
+            android:text="感  触："
+            android:textColor="#ED4A4B"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/txtInganchu"
+            android:layout_toLeftOf="@+id/txtIndidian">
+        </TextView>
+
+        <EditText
+            android:id="@+id/txtInganchu"
+            android:layout_width="210dp"
+            android:layout_height="60dp"
+            android:textColor="#3C3F41"
+            android:singleLine="false"
+            android:layout_below="@id/txtIndidian"
+            android:gravity="top"
+            android:layout_toRightOf="@+id/tvInganchu"/>
+
+        <Button
+            android:id="@+id/btnIn_Save"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btnIn_Cancel"
+            android:layout_alignBottom="@+id/btnIn_Cancel"
+            android:layout_toLeftOf="@+id/btnIn_Cancel"
+            android:text="保存"
+            />
+
+        <Button
+            android:id="@+id/btnIn_Cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@id/txtInganchu"
+            android:layout_alignParentRight="true"
+            android:text="取消"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

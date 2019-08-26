@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/zhu"
+    android:orientation="vertical"
+    android:gravity="top">
+
+    <ImageView
+        android:src="@drawable/qingjia"
+        android:id="@+id/imageView2"
+        android:layout_margin="5px"
+        android:layout_height="240dp"
+        android:layout_width="match_parent"/>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <TextView android:layout_width="90dp"
+            android:id="@+id/tvgozhuti"
+            android:textSize="20sp"
+            android:text="主  题："
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtgozhuti"
+            android:layout_alignBottom="@+id/txtgozhuti"
+            android:layout_alignParentLeft="true"
+            android:textColor="#3F51B5"
+            android:layout_marginLeft="8dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/txtgozhuti"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tvgozhuti"
+            android:textSize="20sp"
+            android:textColor="#3A2011"
+            >
+        </TextView>
+
+        <TextView android:layout_width="90dp"
+            android:id="@+id/tvgotime"
+            android:textSize="20sp"
+            android:text="时  间："
+            android:textColor="#3F51B5"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtgotime"
+            android:layout_alignBottom="@+id/txtgotime"
+            android:layout_toLeftOf="@+id/txtgozhuti">
+        </TextView>
+
+        <TextView
+            android:id="@+id/txtgotime"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tvgotime"
+            android:textSize="20sp"
+            android:textColor="#3A2011"
+            android:layout_below="@id/txtgozhuti"
+            android:inputType="datetime"
+            android:hint="2018-06-25"
+            >
+        </TextView>
+
+        <TextView android:layout_width="90dp"
+            android:id="@+id/tvgodidian"
+            android:textSize="20sp"
+            android:text="地  点："
+            android:layout_height="wrap_content"
+            android:textColor="#3F51B5"
+            android:layout_alignTop="@+id/txtgodidian"
+            android:layout_toLeftOf="@+id/txtgotime">
+        </TextView>
+
+        <TextView
+            android:id="@+id/txtgodidian"
+            android:layout_width="210dp"
+            android:layout_height="60dp"
+            android:layout_toRightOf="@id/tvgodidian"
+            android:layout_below="@id/txtgotime"
+            android:textSize="20sp"
+            android:textColor="#3A2011"
+            android:singleLine="false"
+            android:gravity="top"
+            >
+        </TextView>
+
+        <TextView android:layout_width="90dp"
+            android:id="@+id/tvgoganchu"
+            android:textSize="20sp"
+            android:text="感  触："
+            android:layout_height="wrap_content"
+            android:textColor="#3F51B5"
+            android:layout_alignTop="@+id/txtgoganchu"
+            android:layout_toLeftOf="@+id/txtgodidian">
+        </TextView>
+
+        <TextView
+            android:id="@+id/txtgoganchu"
+            android:layout_width="210dp"
+            android:layout_height="60dp"
+            android:textSize="20sp"
+            android:textColor="#3A2011"
+            android:singleLine="false"
+            android:layout_below="@id/txtgodidian"
+            android:gravity="top"
+            android:layout_toRightOf="@+id/tvgoganchu">
+        </TextView>
+
+        <Button
+            android:id="@+id/btn_chance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btn_del"
+            android:layout_alignBottom="@+id/btn_del"
+            android:layout_toLeftOf="@+id/btn_del"
+            android:text="修改"
+            />
+
+        <Button
+            android:id="@+id/btn_del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/gohome"
+            android:layout_alignBottom="@+id/gohome"
+            android:layout_toLeftOf="@+id/gohome"
+            android:text="删除"
+            />
+
+        <Button
+            android:id="@+id/gohome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtgoganchu"
+            android:layout_alignParentRight="true"
+            android:text="返回"
+            />
+
+
+    </RelativeLayout>
+
+</LinearLayout>
