@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".MainActivity"
+    >
+
+    <include layout="@layout/app_include_main_title"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:id="@+id/iv_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+
+
+        <ImageView
+            android:id="@+id/iv_last_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_left"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/tv_monday"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_monday"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:text="@string/app_week_monday"
+            android:textSize="20sp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/iv_last_week"
+            app:layout_constraintLeft_toRightOf="@id/iv_last_week"
+            app:layout_constraintRight_toLeftOf="@id/tv_tuesday"
+            app:layout_constraintTop_toTopOf="@id/iv_last_week" />
+
+        <TextView
+            android:id="@+id/tv_tuesday"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:text="@string/app_week_tuesday"
+            android:textSize="20sp"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/iv_last_week"
+            app:layout_constraintLeft_toRightOf="@id/tv_monday"
+            app:layout_constraintRight_toLeftOf="@id/tv_wednesday"
+            app:layout_constraintTop_toTopOf="@id/iv_last_week" />
+
+        <TextView
+            android:id="@+id/tv_wednesday"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:text="@string/app_week_wednesday"
+            android:textSize="20sp"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/iv_last_week"
+            app:layout_constraintLeft_toRightOf="@id/tv_tuesday"
+            app:layout_constraintRight_toLeftOf="@id/tv_thursday"
+            app:layout_constraintTop_toTopOf="@id/iv_last_week" />
+
+        <TextView
+            android:id="@+id/tv_thursday"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:text="@string/app_week_thursday"
+            android:textSize="20sp"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/iv_last_week"
+            app:layout_constraintLeft_toRightOf="@id/tv_wednesday"
+            app:layout_constraintRight_toLeftOf="@id/tv_friday"
+            app:layout_constraintTop_toTopOf="@id/iv_last_week" />
+
+        <TextView
+            android:id="@+id/tv_friday"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:text="@string/app_week_friday"
+            android:textSize="20sp"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/iv_last_week"
+            app:layout_constraintLeft_toRightOf="@id/tv_thursday"
+            app:layout_constraintRight_toLeftOf="@id/tv_saturday"
+            app:layout_constraintTop_toTopOf="@id/iv_last_week" />
+
+        <TextView
+            android:id="@+id/tv_saturday"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:text="@string/app_week_saturday"
+            android:textSize="20sp"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/iv_last_week"
+            app:layout_constraintLeft_toRightOf="@id/tv_friday"
+            app:layout_constraintRight_toLeftOf="@id/tv_sunday"
+            app:layout_constraintTop_toTopOf="@id/iv_last_week" />
+
+        <TextView
+            android:id="@+id/tv_sunday"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:text="@string/app_week_sunday"
+            android:textSize="20sp"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/iv_last_week"
+            app:layout_constraintLeft_toRightOf="@id/tv_saturday"
+            app:layout_constraintRight_toLeftOf="@id/iv_next_week"
+            app:layout_constraintTop_toTopOf="@id/iv_last_week" />
+
+        <ImageView
+            android:id="@+id/iv_next_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_right"
+            app:layout_constraintLeft_toRightOf="@id/tv_sunday"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_curriculum"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_last_week">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_empty"
+            android:textSize="16sp"
+            android:text="@string/app_course_empty"
+            android:padding="19dp"
+            app:supportFlag="true"
+            android:background="@color/app_tv_bg_color"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/iv_last_week"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:visibility="gone"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>

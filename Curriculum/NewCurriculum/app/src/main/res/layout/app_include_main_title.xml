@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:supportFlag="true"
+    android:background="@color/app_title_rl_bg_color">
+
+    <TextView
+        android:id="@+id/tv_skin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textSize="15sp"
+        android:paddingLeft="32dp"
+        android:paddingTop="26dp"
+        android:paddingBottom="26dp"
+        android:text="@string/app_title_skin"
+        app:supportFlag="true"
+        android:textColor="@color/app_title_tv_color"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="15sp"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="26dp"
+        app:supportFlag="true"
+        android:textColor="@color/app_title_tv_color"
+
+        android:id="@+id/tv_current_date"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:paddingRight="32dp"
+        android:paddingTop="26dp"
+        android:paddingBottom="26dp"
+        android:orientation="horizontal"
+        android:id="@+id/ll_language">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            app:supportFlag="true"
+            android:textColor="@color/app_title_tv_color"
+            android:text="中"
+            android:id="@+id/tv_chinese"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            app:supportFlag="true"
+            android:textColor="@color/app_title_tv_color"
+            android:text="/"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            app:supportFlag="true"
+            android:textColor="@color/app_title_tv_color"
+            android:text="English"
+            android:id="@+id/tv_English"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_add_course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/ll_language"
+        android:textSize="15sp"
+        android:paddingRight="18dp"
+        android:paddingTop="26dp"
+        android:paddingBottom="26dp"
+        app:supportFlag="true"
+        android:textColor="@color/app_title_tv_color"
+        android:text="@string/app_title_add"
+        android:onClick="onClick"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,2 @@
+include ':app', ':curriculumSkin', ':curriculumSkin2'
+rootProject.name='New curriculum'

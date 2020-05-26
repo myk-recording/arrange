@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">New curriculum</string>
+    <string name="app_course_empty">Empty,should we arrange it?</string>
+    <string name="app_week_monday">Mon</string>
+    <string name="app_week_tuesday">Tue</string>
+    <string name="app_week_wednesday">Wed</string>
+    <string name="app_week_thursday">Thur</string>
+    <string name="app_week_friday">Fri</string>
+    <string name="app_week_saturday">Sat</string>
+    <string name="app_week_sunday">Sun</string>
+    <string name="app_dialog_subject">Subject：</string>
+    <string name="app_dialog_classroom">Classroom：</string>
+    <string name="app_dialog_course_name">Course Name：</string>
+    <string name="app_dialog_day">Day：</string>
+    <string name="app_dialog_start_time">Start Time：</string>
+    <string name="app_dialog_end_time">End Time：</string>
+    <string name="app_dialog_teacher">Teacher：</string>
+    <string name="app_dialog_tackle">Tackle：</string>
+    <string name="app_dialog_ps">Optional</string>
+    <string name="app_dialog_cancel">Cancel</string>
+    <string name="app_dialog_confirm">Confirm</string>
+    <string name="app_dialog_save">Save</string>
+    <string name="app_dialog_delete">Delete</string>
+    <string name="app_title_skin">Skinning</string>
+    <string name="app_title_add">Add To</string>
+    <string name="app_notification_tackle_empty">Bring the necessary utensils</string>
+    <string name="app_notification_tackle_head">Bring </string>
+    <string name="app_notification_tackle_tail"> to go!</string>
+    <string name="app_notification_title">The door to knowledge is about to open:</string>
+
+</resources>
