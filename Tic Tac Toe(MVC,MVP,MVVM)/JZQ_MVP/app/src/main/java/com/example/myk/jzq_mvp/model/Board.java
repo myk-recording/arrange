@@ -1,7 +1,8 @@
-package com.example.myk.jzq_mvc.model;
+package com.example.myk.jzq_mvp.model;
 
-import static com.example.myk.jzq_mvc.model.Player.O;
-import static com.example.myk.jzq_mvc.model.Player.X;
+
+import static com.example.myk.jzq_mvp.model.Player.O;
+import static com.example.myk.jzq_mvp.model.Player.X;
 
 public class Board {
     
