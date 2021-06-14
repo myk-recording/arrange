@@ -65,16 +65,22 @@ public class  JzqActivity extends AppCompatActivity implements JzqiView {
 
     @Override
     public void clearWinnerDisplay() {
-
+        winnerPlayerView.setVisibility(View.GONE);
+        winnerPlayerTextView.setText("");
     }
 
     @Override
     public void clearButtons() {
-
+        for (int i = 0; i < buttonGrid.getChildCount(); i++) {
+            ((Button) buttonGrid.getChildAt(i)).setText("");
+        }
     }
 
     @Override
     public void setButtonText(int row, int col, String content) {
-
+        Button button = (Button) buttonGrid.findViewWithTag("" + row + col);
+        if (button != null) {
+            button.setText(content);
+        }
     }
 }

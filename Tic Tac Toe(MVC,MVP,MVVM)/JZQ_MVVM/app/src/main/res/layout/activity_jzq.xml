@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="com.example.myk.jzq_mvvm.viewmodel.JzqViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/tictactoe"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="44dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="44dp"
+        android:gravity="center_horizontal"
+        >
+
+        <GridLayout
+            android:id="@+id/buttonGrid"
+            android:columnCount="3"
+            android:rowCount="3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:tag="00"
+                android:onClick="onCellClicked"
+                />
+
+            <Button
+                android:tag="01"
+                android:onClick="onCellClicked"/>
+
+            <Button
+                android:tag="02"
+                android:onClick="onCellClicked"/>
+
+            <Button
+                android:tag="10"
+                android:onClick="onCellClicked"
+                />
+
+            <Button
+                android:tag="11"
+                android:onClick="onCellClicked"/>
+
+            <Button
+                android:tag="12"
+                android:onClick="onCellClicked"/>
+
+            <Button
+                android:tag="20"
+                android:onClick="onCellClicked"
+                />
+
+            <Button
+                android:tag="21"
+                android:onClick="onCellClicked"/>
+
+            <Button
+                android:tag="22"
+                android:onClick="onCellClicked"/>
+
+        </GridLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/winnerPlayerViewGroup"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/winnerPlayerLabel1"
+                android:textSize="40sp"
+                android:layout_margin="20dp"
+                tools:text="X"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="赢了"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
