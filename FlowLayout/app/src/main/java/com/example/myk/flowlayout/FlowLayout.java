@@ -7,7 +7,15 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 public class FlowLayout extends ViewGroup {
+    private int mhorizontal = dp2px(16);
+    private int mvertical = dp2px(8);
+    private List<View> lineList = new ArrayList<>();
+
     public FlowLayout(Context context) {
         super(context);
     }
@@ -27,12 +35,36 @@ public class FlowLayout extends ViewGroup {
         int paddingRight = getPaddingRight();
         int paddingTop = getPaddingTop();
         int paddingBottom = getPaddingBottom();
+        int selfWidth = MeasureSpec.getSize(widthMeasureSpec);
+        int selfHeight = MeasureSpec.getSize(heightMeasureSpec);
+        lineList = new ArrayList<>();
+        int lineWidth = 0;
+        int lineHeight = 0;
+        int parentWidth = 0;
+        int parentHeight = 0;
         for (int i = 0; i < childCount; i++) {
             View childView = getChildAt(i);
             LayoutParams childLayoutParams = childView.getLayoutParams();
             int childWidthMeasureSpec = getChildMeasureSpec(widthMeasureSpec,paddingLeft + paddingRight,childLayoutParams.width);
             int childHeightMeasureSpec = getChildMeasureSpec(heightMeasureSpec,paddingTop + paddingBottom,childLayoutParams.height);
             childView.measure(childWidthMeasureSpec,childHeightMeasureSpec);
+            int childMeasureWidth = childView.getMeasuredWidth();
+            int childMeasureHeight = childView.getMeasuredHeight();
+            if (childMeasureWidth + lineWidth + mhorizontal > selfWidth) {
+                parentHeight = parentHeight + lineHeight + mvertical;
+                parentWidth = Math.max(parentWidth,lineWidth + mhorizontal);
+                lineList = new ArrayList<>();
+                lineWidth = 0;
+                lineHeight = 0;
+            }
+            lineList.add(childView);
+            lineWidth += childMeasureWidth + mhorizontal;
+            lineHeight = Math.max(lineHeight,childMeasureHeight);
+            int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+            int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+            int realWidth = (widthMode == MeasureSpec.EXACTLY) ? selfWidth : parentWidth;
+            int realHeight = (heightMode == MeasureSpec.EXACTLY) ? selfHeight : parentHeight;
+            setMeasuredDimension(realWidth,realHeight);
         }
     }
 
