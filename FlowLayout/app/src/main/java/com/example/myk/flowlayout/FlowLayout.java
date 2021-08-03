@@ -15,6 +15,8 @@ public class FlowLayout extends ViewGroup {
     private int mhorizontal = dp2px(16);
     private int mvertical = dp2px(8);
     private List<View> lineList = new ArrayList<>();
+    private List<List<View>> allLineList;
+    private List<Integer> lineHeightList = new ArrayList<>();
 
     public FlowLayout(Context context) {
         super(context);
@@ -30,6 +32,16 @@ public class FlowLayout extends ViewGroup {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        if (allLineList == null) {
+            allLineList = new ArrayList<>();
+        } else {
+            allLineList.clear();
+        }
+        if (lineHeightList == null) {
+            lineHeightList = new ArrayList<>();
+        } else {
+            lineHeightList.clear();
+        }
         int childCount = getChildCount();
         int paddingLeft = getPaddingLeft();
         int paddingRight = getPaddingRight();
@@ -42,6 +54,8 @@ public class FlowLayout extends ViewGroup {
         int lineHeight = 0;
         int parentWidth = 0;
         int parentHeight = 0;
+        allLineList.clear();
+        lineHeightList.clear();
         for (int i = 0; i < childCount; i++) {
             View childView = getChildAt(i);
             LayoutParams childLayoutParams = childView.getLayoutParams();
@@ -51,6 +65,8 @@ public class FlowLayout extends ViewGroup {
             int childMeasureWidth = childView.getMeasuredWidth();
             int childMeasureHeight = childView.getMeasuredHeight();
             if (childMeasureWidth + lineWidth + mhorizontal > selfWidth) {
+                allLineList.add(lineList);
+                lineHeightList.add(lineHeight);
                 parentHeight = parentHeight + lineHeight + mvertical;
                 parentWidth = Math.max(parentWidth,lineWidth + mhorizontal);
                 lineList = new ArrayList<>();
@@ -70,7 +86,22 @@ public class FlowLayout extends ViewGroup {
 
     @Override
     protected void onLayout(boolean b, int i, int i1, int i2, int i3) {
-
+        int lineCount = allLineList.size();
+        int pl = getPaddingLeft();
+        int pt = getPaddingTop();
+        for (int j = 0; j < lineCount; j++) {
+            List<View> lineViewList = allLineList.get(j);
+            int count = lineViewList.size();
+            for (int k = 0; k < count; k++) {
+                View view = lineViewList.get(k);
+                int right = pl + view.getMeasuredWidth();
+                int bottom = pt + view.getMeasuredHeight();
+                view.layout(pl,pt,right,bottom);
+                pl = right + mhorizontal;
+            }
+            pl = getPaddingLeft();
+            pt = pt + lineHeightList.get(j) + mvertical;
+        }
     }
 
     public static int dp2px(int dp) {
