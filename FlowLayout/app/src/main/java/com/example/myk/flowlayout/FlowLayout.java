@@ -54,8 +54,6 @@ public class FlowLayout extends ViewGroup {
         int lineHeight = 0;
         int parentWidth = 0;
         int parentHeight = 0;
-        allLineList.clear();
-        lineHeightList.clear();
         for (int i = 0; i < childCount; i++) {
             View childView = getChildAt(i);
             LayoutParams childLayoutParams = childView.getLayoutParams();
@@ -76,12 +74,19 @@ public class FlowLayout extends ViewGroup {
             lineList.add(childView);
             lineWidth += childMeasureWidth + mhorizontal;
             lineHeight = Math.max(lineHeight,childMeasureHeight);
-            int widthMode = MeasureSpec.getMode(widthMeasureSpec);
-            int heightMode = MeasureSpec.getMode(heightMeasureSpec);
-            int realWidth = (widthMode == MeasureSpec.EXACTLY) ? selfWidth : parentWidth;
-            int realHeight = (heightMode == MeasureSpec.EXACTLY) ? selfHeight : parentHeight;
-            setMeasuredDimension(realWidth,realHeight);
         }
+
+        if (lineList.size() > 0) {
+            allLineList.add(lineList);
+            lineHeightList.add(lineHeight);
+            parentHeight = parentHeight + lineHeight + mvertical;
+            parentWidth = Math.max(parentWidth,lineWidth + mhorizontal);
+        }
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+        int realWidth = (widthMode == MeasureSpec.EXACTLY) ? selfWidth : parentWidth;
+        int realHeight = (heightMode == MeasureSpec.EXACTLY) ? selfHeight : parentHeight;
+        setMeasuredDimension(realWidth,realHeight);
     }
 
     @Override
